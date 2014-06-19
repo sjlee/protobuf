@@ -177,8 +177,7 @@ public abstract class GeneratedMessage extends AbstractMessage
 
   //@Override (Java 1.6 override semantics, but we must support 1.5)
   public UnknownFieldSet getUnknownFields() {
-    throw new UnsupportedOperationException(
-        "This is supposed to be overridden by subclasses.");
+    return UnknownFieldSet.getDefaultInstance();
   }
 
   /**
