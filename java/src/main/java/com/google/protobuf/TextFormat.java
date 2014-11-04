@@ -71,6 +71,14 @@ public final class TextFormat {
     DEFAULT_PRINTER.print(message, new TextGenerator(output));
   }
 
+  /**
+   * Overloaded version to provide backward compatibility.
+   */
+  public static void print(final Message message, final Appendable output)
+                           throws IOException {
+    print((MessageOrBuilder)message, output);
+  }
+
   /** Outputs a textual representation of {@code fields} to {@code output}. */
   public static void print(final UnknownFieldSet fields,
                            final Appendable output)
@@ -91,6 +99,13 @@ public final class TextFormat {
     } catch (IOException e) {
       throw new IllegalStateException(e);
     }
+  }
+
+  /**
+   * Overloaded version to provide backward compatibility.
+   */
+  public static String shortDebugString(final Message message) {
+    return shortDebugString((MessageOrBuilder)message);
   }
 
   /**
@@ -123,6 +138,13 @@ public final class TextFormat {
   }
 
   /**
+   * Overloaded version to provide backward compatibility.
+   */
+  public static String printToString(final Message message) {
+    return printToString((MessageOrBuilder)message);
+  }
+
+  /**
    * Like {@code print()}, but writes directly to a {@code String} and
    * returns it.
    */
@@ -148,6 +170,13 @@ public final class TextFormat {
     } catch (IOException e) {
       throw new IllegalStateException(e);
     }
+  }
+
+  /**
+   * Overloaded version to provide backward compatibility.
+   */
+  public static String printToUnicodeString(final Message message) {
+    return printToUnicodeString((MessageOrBuilder)message);
   }
 
   /**
